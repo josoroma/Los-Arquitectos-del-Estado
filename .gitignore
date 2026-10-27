@@ -1,0 +1,13 @@
+# El corpus documental son obras de terceros: nunca se versiona.
+/data/
+/books/
+
+# Artefactos de Python y del sistema
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+
+# El lector generado sí se versiona (lo publica GitHub Pages), pero sus
+# dependencias no.
+node_modules/

@@ -1,0 +1,68 @@
+{
+  "10": {
+    "src": "assets/img/capitulos/10.svg",
+    "titulo": "La silla junto al poder",
+    "alt": "Un escritorio, documentos, una computadora y dos sillas bajo la bandera nacional.",
+    "descripcion": "El espacio de la asesoría y la distancia entre las ideas y el ejercicio del poder."
+  },
+  "11": {
+    "src": "assets/img/capitulos/11.svg",
+    "titulo": "La arquitectura bajo examen",
+    "alt": "Un pórtico abierto sobre un gran libro, piezas desmontadas y un compás.",
+    "descripcion": "La tradición revisa sus propios cimientos antes de proponer otra construcción."
+  },
+  "01": {
+    "src": "assets/img/capitulos/01.svg",
+    "titulo": "Un país por construir",
+    "alt": "Una casa de adobe, el documento de 1821 y una carreta sobre una plaza incompleta.",
+    "descripcion": "Los primeros cimientos: territorio, enseñanza y administración."
+  },
+  "02": {
+    "src": "assets/img/capitulos/02.svg",
+    "titulo": "La carta y la autoridad",
+    "alt": "Un libro abierto de 1844, un sello de lacre y una casa municipal.",
+    "descripcion": "La Constitución como límite al poder y como origen de nuevas instituciones."
+  },
+  "03": {
+    "src": "assets/img/capitulos/03.svg",
+    "titulo": "El oficio de construir leyes",
+    "alt": "Una institución republicana, códigos encuadernados y una balanza de latón.",
+    "descripcion": "Los libros y los profesionales que dieron forma jurídica a la república."
+  },
+  "04": {
+    "src": "assets/img/capitulos/04.svg",
+    "titulo": "El Estado en marcha",
+    "alt": "Una locomotora, líneas telegráficas, la carta de 1871 y un edificio estatal.",
+    "descripcion": "Infraestructura y administración: las piezas de la modernización de Guardia."
+  },
+  "05": {
+    "src": "assets/img/capitulos/05.svg",
+    "titulo": "El suelo y la deuda",
+    "alt": "Hileras de café, una carreta pintada, un libro de cuentas y monedas.",
+    "descripcion": "La tierra cultivada y los instrumentos del crédito comparten la misma parcela."
+  },
+  "06": {
+    "src": "assets/img/capitulos/06.svg",
+    "titulo": "La palabra en disputa",
+    "alt": "Una imprenta de madera entre una iglesia y dos grupos de publicaciones.",
+    "descripcion": "La prensa y las instituciones convierten la palabra liberal en controversia."
+  },
+  "07": {
+    "src": "assets/img/capitulos/07.svg",
+    "titulo": "La plaza y la promesa",
+    "alt": "Una tribuna, una urna y sillas frente a una casa de tejas costarricense.",
+    "descripcion": "La política abandona el salón y busca su fuerza en la plaza pública."
+  },
+  "08": {
+    "src": "assets/img/capitulos/08.svg",
+    "titulo": "Después de 1948",
+    "alt": "Un cuartel de piedra, una urna, columnas bancarias y la Constitución de 1949.",
+    "descripcion": "La guerra cede el paso a un nuevo edificio institucional."
+  },
+  "09": {
+    "src": "assets/img/capitulos/09.svg",
+    "titulo": "Ocho lugares para una idea",
+    "alt": "Ocho sillas rodean una mesa con libros, papeles y café en una biblioteca.",
+    "descripcion": "Una sala de reunión: el pequeño círculo desde el que comenzó ANFE."
+  }
+}

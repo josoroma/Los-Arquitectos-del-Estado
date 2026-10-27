@@ -1,0 +1,74 @@
+name: Publicar el lector
+
+# El lector es estático: no hay build en el servidor. Este flujo solo comprueba
+# que el manuscrito siga siendo coherente y publica `docs/` en GitHub Pages.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Instalar dependencias del build
+        run: python -m pip install --quiet markdown-it-py
+
+      - name: Comprobar que el lector está al día con el manuscrito
+        run: |
+          python docs/arte.py
+          python docs/build.py
+          if ! git diff --quiet -- docs/data docs/assets/img; then
+            echo "::error::docs/data o docs/assets/img están desactualizados. Corre 'python docs/arte.py && python docs/build.py' y vuelve a commitear."
+            git --no-pager diff --stat -- docs/data docs/assets/img
+            exit 1
+          fi
+
+      - name: Comprobar que las citas del corpus siguen cuadrando
+        run: |
+          # El corpus no se distribuye con el libro: son obras de terceros.
+          # Sin él, el verificador sale con código 2 y este paso lo informa sin
+          # bloquear la publicación, porque el texto ya está verificado en origen.
+          if [ -d data/books ]; then
+            python verificar-citas.py
+          else
+            echo "::notice::Sin corpus local; se omite la verificación de citas."
+          fi
+
+  publicar:
+    needs: verificar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
